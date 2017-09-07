@@ -21,7 +21,7 @@ RUN \
   sed -i 's/^\(logfile .*\)$/# \1/' /etc/redis/redis.conf
 
 # Cleanup dependencies
-RUN yum -y erase gcc cc tar
+RUN yum history -y rollback last
 
 # Define mountable directories
 VOLUME ["/data"]
